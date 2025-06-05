@@ -1,0 +1,12 @@
+Projeto CSBA
+
+Grupo 7
+
+Métodos para fazer na calculadora:
+
+7. Distância entre os números – Valor absoluto da diferença: |a - b| (feito)
+8. Número maior – Retorna o maior entre a e b
+9. Número menor – Retorna o menor entre a e b
+14. Par ou ímpar – Indica se a e b são pares ou ímpares
+
+FALTA A PARTE DO KIVY
