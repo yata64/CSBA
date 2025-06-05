@@ -1,0 +1,32 @@
+from kivy.app import App
+from kivy.uix.boxlayout import BoxLayout
+from kivy.core.window import Window
+
+class Quadro(BoxLayout):
+    def __init__(self, **kwargs):
+        super().__init__(**kwargs)
+        Window.size = (400, 300)
+        self.limpar()
+
+    def limpar(self):
+        self.ids.mensagem.text = " "
+        self.ids.op1.text = " "
+        self.ids.op2.text = " "
+        self.ids.resultado.text = " "
+
+    def limpar(self):
+        App.get_running_app().stop()
+
+    def distancia_entre_num(self):
+        try: 
+            o1 = float(self.ids.op1.text)
+            o2 = float(self.ids.op2.text)
+
+            if o1 > 0:
+                self.ids.resultado.text = str(o1-o2)
+
+            else:
+                self.ids.resultado.text = str(o2-o1)
+
+        except ValueError: 
+            print("ERRO!!! Digite um número!")
