@@ -7,11 +7,14 @@
         text: ''
         markup: True  
 
-    BoxLayout:
-        spacing: 10
+    GridLayout:
+        cols: 3
+        spacing: 5
+        size_hint_y: None
+        height: self.minimum_height
         Button:
             text: "0"
-            on_press: op1.text += self.text  # ou outra lógica
+            on_press: op1.text += self.text  
         Button: 
             text: "1"
             on_press: op1.text += self.text
@@ -20,7 +23,7 @@
             on_press: op1.text += self.text
         Button:
             text: "3"
-            on_press: op1.text += self.text  # ou outra lógica
+            on_press: op1.text += self.text  
         Button: 
             text: "4"
             on_press: op1.text += self.text
@@ -29,7 +32,7 @@
             on_press: op1.text += self.text
         Button:
             text: "6"
-            on_press: op1.text += self.text  # ou outra lógica
+            on_press: op1.text += self.text  
         Button: 
             text: "7"
             on_press: op1.text += self.text
