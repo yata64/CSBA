@@ -5,8 +5,9 @@ Grupo 7
 Métodos para fazer na calculadora:
 
 7. Distância entre os números – Valor absoluto da diferença: |a - b| (feito)
-8. Número maior – Retorna o maior entre a e b
-9. Número menor – Retorna o menor entre a e b
-14. Par ou ímpar – Indica se a e b são pares ou ímpares
+8. Número maior – Retorna o maior entre a e b (feito)
+9. Número menor – Retorna o menor entre a e b (feito)
+14. Par ou ímpar – Indica se a e b são pares ou ímpares (feito)
 
-FALTA A PARTE DO KIVY
+FALTA A PARTE DO KIVY 
+sendo feito...
