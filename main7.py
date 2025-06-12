@@ -8,6 +8,13 @@ class Quadro(BoxLayout):
         Window.size = (400, 300)
         self.limpar()
 
+    def operador(self, numero):
+        if self.ids.op1.focus:
+            self.ids.op1.text += numero
+        
+        elif self.ids.op2.focus:
+            self.ids.op2.text += numero
+
     def limpar(self):
         self.ids.mensagem.text = " "
         self.ids.op1.text = " "
@@ -70,21 +77,22 @@ class Quadro(BoxLayout):
                 msg += f"[color=#FF0000]{o1} é par!![/color]\n"
 
             else: 
-                msg += f"[color=#FF0000]{o1} é par!![/color]\n"
+                msg += f"[color=#FF0000]{o1} é impar!![/color]\n"
             
             if o2 % 2 == 0: 
                 msg += f"[color=#FF0000]{o2} é par!![/color]"
 
             else: 
-                msg += f"[color=#FF0000]{o2} é par!![/color]"
+                msg += f"[color=#FF0000]{o2} é impar!![/color]"
         except:
             self.ids.mensagem.text = \
             "[color=#FF0000] Favor fornecer os operandos corretamente!![/color]"
 
-class interfaceApp(App):
+class interface7App(App):
 
     def build(self):
         self.title = "Calculadora"
         return Quadro()
 
-meuApp = interfaceApp()
+meuApp = interface7App()
+meuApp.run()
