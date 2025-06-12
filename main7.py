@@ -8,7 +8,7 @@ class Quadro(BoxLayout):
         Window.size = (400, 300)
         self.limpar()
 
-    def operador(self, numero):
+    def operador(self, numero): #utilizei focus pois ia ser trabalhoso para aplicar boolean no kivy
         if self.ids.op1.focus:
             self.ids.op1.text += numero
         
@@ -16,10 +16,10 @@ class Quadro(BoxLayout):
             self.ids.op2.text += numero
 
     def limpar(self):
-        self.ids.mensagem.text = " "
-        self.ids.op1.text = " "
-        self.ids.op2.text = " "
-        self.ids.resultado.text = " "
+        self.ids.mensagem.text = ""
+        self.ids.op1.text = ""
+        self.ids.op2.text = ""
+        self.ids.resultado.text = ""
 
     def desligar(self):
         App.get_running_app().stop()
