@@ -14,15 +14,15 @@ class Quadro(BoxLayout):
         self.ids.op2.text = " "
         self.ids.resultado.text = " "
 
-    def limpar(self):
+    def desligar(self):
         App.get_running_app().stop()
 
-    def distancia_entre_num(self):
+    def distancia_entre_n(self):
         try: 
             o1 = float(self.ids.op1.text)
             o2 = float(self.ids.op2.text)
 
-            if o1 > 0:
+            if o1 > o2:
                 self.ids.resultado.text = str(o1-o2)
 
             else:
@@ -64,22 +64,27 @@ class Quadro(BoxLayout):
         try:
             o1 = float(self.ids.op1.text)
             o2 = float(self.ids.op2.text)
+            msg = " "
             
             if o1 % 2 == 0: 
-                self.ids.mensagem.text = str(o1)
-                "[color=#FF0000] é par!![/color]"
+                msg += f"[color=#FF0000]{o1} é par!![/color]\n"
 
             else: 
-                self.ids.mensagem.text = str(o1)
-                "[color=#FF0000] é impar!![/color]"
+                msg += f"[color=#FF0000]{o1} é par!![/color]\n"
             
             if o2 % 2 == 0: 
-                self.ids.mensagem.text = str(o2)
-                "[color=#FF0000] é par!![/color]"
+                msg += f"[color=#FF0000]{o2} é par!![/color]"
 
             else: 
-                self.ids.mensagem.text = str(o2)
-                "[color=#FF0000] é impar!![/color]"
+                msg += f"[color=#FF0000]{o2} é par!![/color]"
         except:
             self.ids.mensagem.text = \
             "[color=#FF0000] Favor fornecer os operandos corretamente!![/color]"
+
+class interfaceApp(App):
+
+    def build(self):
+        self.title = "Calculadora"
+        return Quadro()
+
+meuApp = interfaceApp()
