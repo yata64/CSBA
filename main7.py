@@ -8,13 +8,6 @@ class Quadro(BoxLayout):
         Window.size = (400, 300)
         self.limpar()
 
-    def operador(self, numero): #utilizei focus pois ia ser trabalhoso para aplicar boolean no kivy
-        if self.ids.op1.focus:
-            self.ids.op1.text += numero
-        
-        elif self.ids.op2.focus:
-            self.ids.op2.text += numero
-
     def limpar(self):
         self.ids.mensagem.text = ""
         self.ids.op1.text = ""
@@ -69,21 +62,24 @@ class Quadro(BoxLayout):
     
     def par_impar(self):
         try:
-            o1 = float(self.ids.op1.text)
-            o2 = float(self.ids.op2.text)
+            o1 = int(self.ids.op1.text)
+            o2 = int(self.ids.op2.text)
             msg = " "
             
             if o1 % 2 == 0: 
-                msg += f"[color=#FF0000]{o1} é par!![/color]\n"
+                msg += f"{o1} é par!!\n"
 
             else: 
-                msg += f"[color=#FF0000]{o1} é impar!![/color]\n"
+                msg += f"{o1} é impar!!\n"
             
             if o2 % 2 == 0: 
-                msg += f"[color=#FF0000]{o2} é par!![/color]"
+                msg += f"{o2} é par!!"
 
             else: 
-                msg += f"[color=#FF0000]{o2} é impar!![/color]"
+                msg += f"{o2} é impar!!"
+
+            self.ids.resultado.text = msg
+
         except:
             self.ids.mensagem.text = \
             "[color=#FF0000] Favor fornecer os operandos corretamente!![/color]"
