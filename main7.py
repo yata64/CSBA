@@ -5,7 +5,7 @@ from kivy.core.window import Window
 class Quadro(BoxLayout):
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
-        Window.size = (400, 300)
+        Window.size = (500, 400)
         self.limpar()
 
     def limpar(self):
@@ -55,6 +55,17 @@ class Quadro(BoxLayout):
             
             else: 
                 self.ids.resultado.text = str(o1)
+
+        except: 
+            self.ids.mensagem.text = \
+            "[color=#FF0000] Favor fornecer os operandos corretamente!![/color]"
+
+    def potencia(self):
+        try: 
+            o1 = float(self.ids.op1.text)
+            o2 = float(self.ids.op2.text)
+
+            self.ids.resultado.text = str(o1 ** o2)
 
         except: 
             self.ids.mensagem.text = \
