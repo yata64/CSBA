@@ -90,5 +90,5 @@ class interface7App(App):
         self.title = "Calculadora"
         return Quadro()
 
-meuApp = interface7App()
+meuApp = interface7App()    
 meuApp.run()
